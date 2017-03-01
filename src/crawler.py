@@ -1,10 +1,13 @@
 from bs4 import BeautifulSoup
 import urllib2
-import urllib
 import json
 import argparse
 import os
+from datetime import datetime, timedelta
 
+
+#The function takes the given url and extract the body from the HTML code of the site.
+#A User-Agent is used in case of 403 case.
 def grab_static_file(url):
 	user_agent = 'Mozilla/5.0 (Windows; U; Windows NT 5.1; it; rv:1.8.1.11) Gecko/20071127 Firefox/2.0.0.11'
 	headers = {'User-Agent' : user_agent}
@@ -16,22 +19,31 @@ def grab_static_file(url):
 	scrape_body(body)
 
 
+#The code here takes the body that was extraced and then search for links in it,
+#if a found link contains a YouTube URL pattern, then the parser script is run over it.
 def scrape_body(body):
 	for link in body.find_all('a'):
 		if not 'https://www.youtube.com/watch?v=' in link.get('href'):
 			continue
 		else:
 			os.system("python parser.py %s" % (link.get('href')))
-	grab_json_data()
 
 
-def grab_json_data(path):
+
+#A function the suppose to check if there have been two hours since the last clean-up of the log up, 
+#if not the log will be cleaned.
+def clean_log():
 
 
+
+#The clean_up function works anytime the script is called. Though, it will clean up the log only if, 
+#have been two hours since the last clean-up.	
 if __name__ == '__main__':
 	parser = argparse.ArgumentParser()
 	parser.add_argument('url', help='Enter URL of the static file')
 	args = parser.parse_args()
 	grab_static_file(args.url)
+	clean_log()
+
 
 
