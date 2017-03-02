@@ -3,7 +3,8 @@ import urllib2
 import json
 import argparse
 import os
-from datetime import datetime, timedelta
+from datetime import datetime
+from threading import Timer
 
 
 #The function takes the given url and extract the body from the HTML code of the site.
@@ -30,10 +31,14 @@ def scrape_body(body):
 
 
 
-#A function the suppose to check if there have been two hours since the last clean-up of the log up, 
-#if not the log will be cleaned.
+#The function cleans the txt file every day to prevent a huge file what would effect latency.
 def clean_log():
-
+	x=datetime.today()
+	y=x.replace(day=x.day+1,hour=0,minute=0,second=0,microsecond=0)
+	delta = y-x
+	seconds = delta.seconds+1
+	cleaner = Timer(seconds, lambda _: open('data.txt',w).close())
+	t.start()
 
 
 #The clean_up function works anytime the script is called. Though, it will clean up the log only if, 
@@ -44,6 +49,7 @@ if __name__ == '__main__':
 	args = parser.parse_args()
 	grab_static_file(args.url)
 	clean_log()
+
 
 
 
