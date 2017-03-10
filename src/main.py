@@ -1,9 +1,10 @@
 from bs4 import BeautifulSoup
 import urllib2
 import argparse
-import os
 from datetime import datetime, timedelta
 from threading import Timer
+import subprocess
+import threading
 
 
 
@@ -19,6 +20,8 @@ def grab_static_file(url):
 	body = soup.find('body')
 	scrape_body(body)
 
+	
+
 
 #The code here takes the body that was extraced and then search for links in it,
 #if a found link contains a YouTube URL pattern, then the parser script is run over it.
@@ -27,23 +30,11 @@ def scrape_body(body):
 		if not 'https://www.youtube.com/watch?v=' in link.get('href'):
 			continue
 		else:
-			os.system("python scrape.py %s" % (link.get('href')))
-	clean_log()
-		
-
-
-
-#A function to clean the log file, to which the data is downloaded in JSON format , every two hours.
-def clean_log():
-	now = datetime.now()
-	set_timer = datetime(hour=now.hour+2,month = now.month,year=now.year,day=now.day,minute=now.minute,second=now.second)
-	seconds = set_timer.second+1
-	timer = Timer(seconds,lambda : open('data.txt','w').close())
-	timer.start()
-
-
+			t = threading.Thread(target=subprocess.call('python scrape.py %s' % (link.get('href'))))
+			t.daemon = True
+			t.start()
+			
 	
-
 #The clean_up function works anytime the script is called. Though, it will clean up the log only if, 
 #have been two hours since the last clean-up.	
 if __name__ == '__main__':
@@ -51,7 +42,9 @@ if __name__ == '__main__':
 	parser.add_argument('url', help='Enter URL of the static file')
 	args = parser.parse_args()
 	grab_static_file(args.url)
-	now = datetime.now()
+	
+	
+	
 
 
 

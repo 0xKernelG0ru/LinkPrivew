@@ -3,22 +3,6 @@
     "Thumbnail":"https://i.ytimg.com/vi/p69khggr1Jo/mqdefault.jpg",
     "Title":"How to Make a Neural Network - Intro to Deep Learning #2"
 }{
-    "Description":"How do we learn? In this video, I'll discuss our brain's biological neural network, then we'll talk about how an artificial neural network works. We'll create our own ...",
-    "Thumbnail":"https://i.ytimg.com/vi/p69khggr1Jo/mqdefault.jpg",
-    "Title":"How to Make a Neural Network - Intro to Deep Learning #2"
-}{
-    "Description":"How do we learn? In this video, I'll discuss our brain's biological neural network, then we'll talk about how an artificial neural network works. We'll create our own ...",
-    "Thumbnail":"https://i.ytimg.com/vi/p69khggr1Jo/mqdefault.jpg",
-    "Title":"How to Make a Neural Network - Intro to Deep Learning #2"
-}{
-    "Description":"This is lecture 1 of course 6.S094: Deep Learning for Self-Driving Cars taught in Winter 2017. Course website: http://cars.mit.edu Lecture 1 slides: ...",
-    "Thumbnail":"https://i.ytimg.com/vi/1L0TKZQcUtA/mqdefault.jpg",
-    "Title":"MIT 6.S094: Introduction to Deep Learning and Self-Driving Cars"
-}{
-    "Description":"How do we learn? In this video, I'll discuss our brain's biological neural network, then we'll talk about how an artificial neural network works. We'll create our own ...",
-    "Thumbnail":"https://i.ytimg.com/vi/p69khggr1Jo/mqdefault.jpg",
-    "Title":"How to Make a Neural Network - Intro to Deep Learning #2"
-}{
     "Description":"This is lecture 1 of course 6.S094: Deep Learning for Self-Driving Cars taught in Winter 2017. Course website: http://cars.mit.edu Lecture 1 slides: ...",
     "Thumbnail":"https://i.ytimg.com/vi/1L0TKZQcUtA/mqdefault.jpg",
     "Title":"MIT 6.S094: Introduction to Deep Learning and Self-Driving Cars"
