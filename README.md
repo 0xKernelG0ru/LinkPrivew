@@ -1,3 +1,5 @@
 #L1NK Privew
 
-The service finds a fitting title, description and a thumbnail image for each YouTube URL found on the given site. Display all the paramaters in a small box hovering above the link and thus provide a privew for the link.
+Given a website's URL, the service looks for links found on the URL and checks if they are YouTube videos being linked. If case found fit, the service sends a request with the YouTube URL, returns the needed paramaters (Title, Description, Thumbnail image) and download the data in JSON format to a .txt file.
+
+The only thing needed to do is write the JS tooltip, though as for now I will leave it for the sake of other projects.
