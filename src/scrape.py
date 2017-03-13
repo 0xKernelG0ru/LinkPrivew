@@ -4,7 +4,7 @@ import json
 import argparse
 
 
-DEVELOPER_KEY = "AIzaSyBnCjLDSU3n55VEvYWRR4goqq7HIdR0q-c"
+DEVELOPER_KEY = "API-KEY"
 YOUTUBE_API_SERVICE_NAME = "youtube"
 YOUTUBE_API_VERSION = "v3"
 
